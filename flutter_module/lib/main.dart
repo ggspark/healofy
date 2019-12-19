@@ -38,16 +38,16 @@ class _HomePageState extends State<HomePage> {
           ),
           showBottomSheet
               ? DraggableScrollableSheet(
-            minChildSize: 0,
-            maxChildSize: 0.9,
-            initialChildSize: 0.4,
-            builder: (context, scrollController) {
-              return ListView.builder(
-                  controller: scrollController,
-                  itemCount: 20,
-                  itemBuilder: (context, index) => SheetItem(index));
-            },
-          )
+                  minChildSize: 0,
+                  maxChildSize: 0.9,
+                  initialChildSize: 0.4,
+                  builder: (context, scrollController) {
+                    return ListView.builder(
+                        controller: scrollController,
+                        itemCount: 20,
+                        itemBuilder: (context, index) => SheetItem(index));
+                  },
+                )
               : Container(),
         ],
       ),
@@ -80,12 +80,15 @@ class ListItem extends StatelessWidget {
               child: Icon(Icons.person),
             ),
           ),
-          AspectRatio(
-            child: Icon(
-              Icons.image,
-              size: 100,
+          Container(
+            color: Colors.grey[200],
+            child: AspectRatio(
+              child: Icon(
+                Icons.image,
+                size: 100,
+              ),
+              aspectRatio: 1,
             ),
-            aspectRatio: 1,
           ),
           ButtonBar(
             alignment: MainAxisAlignment.spaceEvenly,
